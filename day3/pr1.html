@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter mark of GUJRATI</h1>
+    <input type="text" id="i1">
+
+    <h1>Enter mark of BA</h1>
+    <input type="text" id="i2">
+
+    <h1>Enter mark of MATHS</h1>
+    <input type="text" id="i3">
+
+    <h1>Enter mark of SCIENCE</h1>
+    <input type="text" id="i4">
+
+    <h1>Enter mark of SS</h1>
+    <input type="text" id="i5">
+
+    <h1 id="ans"></h1>
+</body>
+</html>
+<script>
+    let a = document.getElementById("i1").value
+    let b = document.getElementById("i2").value
+    let c = document.getElementById("i3").value
+    let d = document.getElementById("i4").value
+    let e = document.getElementById("i5").value
+
+    let total = (+a + +b + +c + +d + +e)*100/500
+    
+    document.getElementById("ans").innerHTML = total
+</script>
