@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter your score : </h1>
+    <input type="text" id="in1">
+
+    <h2 id="ans"></h2>
+</body>
+</html>
+<script>
+    let s = document.getElementById("in1").value
+    if(s === ""){
+        document.getElementById("ans").innerHTML = "Enter valid score.."
+    }
+    else{
+        if (s >= 90 && s<= 100){
+        document.getElementById("ans").innerHTML = "A"
+        }
+        else if(s >= 80 && s<= 89){
+            document.getElementById("ans").innerHTML = "B"
+        }
+        else if(s >= 70 && s<= 79){
+            document.getElementById("ans").innerHTML = "C"
+        }
+        else if(s >= 60 && s<= 69){
+            document.getElementById("ans").innerHTML = "D"
+        }
+        else{
+            document.getElementById("ans").innerHTML = "FAIL"
+        }
+    }
+</script>

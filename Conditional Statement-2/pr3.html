@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>largest</title>
+</head>
+<style>
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+</style>
+<body>
+    <center>
+
+        <!-- task-3 -->
+
+        <h1>----------calculates the largest----------</h1>
+
+        <h3>Enter value of A : </h3> <input type="text" id="in1">
+        <h3>Enter value of B : </h3> <input type="text" id="in2">
+        <h3>Enter value of C : </h3> <input type="text" id="in3">
+        <h3>Enter value of D : </h3> <input type="text" id="in4">
+        <h3>Enter value of E : </h3> <input type="text" id="in5">
+
+        <h1 id="ans3"></h1>
+
+        <hr style="border: 1px dashed;">
+    </center>
+</body>
+</html>
+<script>
+
+        // task-3
+
+		let a = document.getElementById("in1").value
+		let b = document.getElementById("in2").value
+		let c = document.getElementById("in3").value
+		let d = document.getElementById("in4").value
+		let e = document.getElementById("in5").value
+
+        if(a==="" && b==="" && c==="" && d==="" && e===""){
+            document.getElementById("ans").innerText = "Enter Numner"
+        }
+        else{
+            if (a>b) {
+                if (a>c) {
+                    if(a>d){
+                        if (a>e) {
+                            document.getElementById("ans3").innerText="A is large..."
+                        }
+                        else{
+                            document.getElementById("ans3").innerText="E is large..."
+                        }
+                    }
+                    else{
+                        document.getElementById("ans3").innerText="D is large..."
+                    }
+                }
+                else{
+                    document.getElementById("ans3").innerText="C is large..."
+                }  
+            }
+
+            else if (b>c) {
+                 if (b>d) {
+                   if (b>e) {
+                     document.getElementById("ans3").innerText="b is large..."
+                   } 
+                   else{
+                    document.getElementById("ans3").innerText="E is large..."
+                   }
+                }
+                else{
+                    document.getElementById("ans3").innerText="D is large..."
+                }
+                document.getElementById("ans3").innerText="B is large..."
+
+            }
+            else if (c>d) {
+                if (c>e) {
+                    document.getElementById("ans3").innerText="C is large..."
+                }
+                else{
+                    document.getElementById("ans3").innerText="E is large..."
+                }
+                document.getElementById("ans3").innerText="C is large..."
+            }
+            else {
+                if (d>e) {
+                document.getElementById("ans3").innerText="D is large..."
+              }
+              else{
+                document.getElementById("ans3").innerText="E is large..."
+              }
+            }
+        }
+
+</script>
