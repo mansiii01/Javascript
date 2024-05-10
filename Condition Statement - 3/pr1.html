@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 35px;
+        width: 100px;
+        padding-left: 50px;
+        font-size: 17px;
+    }
+</style>
+<body>
+    <center>
+        <h1>----Password check----</h1>
+
+    <h2>Enter password : </h2>
+    <input type="text" id="in">
+        <h1 id="err"></h1>
+</center>
+</body>
+</html>
+<script>
+    let storedPass = "manu01"
+    let enteredPass = document.getElementById("in").value
+    if(enteredPass === ""){
+        document.getElementById("err").innerHTML = "Enter valid password"
+    }
+    else{
+        if(storedPass === enteredPass){
+        document.getElementById("err").innerHTML = "Logged in"
+        }
+        else{
+            document.getElementById("err").innerHTML = "Incorrect Password"
+        }
+    }
+    
+</script>

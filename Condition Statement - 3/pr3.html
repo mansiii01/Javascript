@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 35px;
+        width: 100px;
+        padding-left: 70px;
+        font-size: 17px;
+    }
+</style>
+<body>
+    <center>
+        <h1>----Odd/Even----</h1>
+    <h2>Enter any number : </h2>
+    <input type="text" id="in">
+    <h2 id="ans"></h2>
+    </center>
+</body>
+</html>
+<script>
+    let num = document.getElementById("in").value
+    if(num === ""){
+        document.getElementById("ans").innerHTML = "Enter valid number"
+    }
+    else{
+        if(num%2 == 0){
+        document.getElementById("ans").innerHTML = ""+num+" : This is Even number"
+        }
+        else{
+            document.getElementById("ans").innerHTML = ""+num+" : This is Odd number"
+        }
+    }
+    
+</script>
