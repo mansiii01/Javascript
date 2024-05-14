@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 50px;
+        width: 150px;
+        font-size: 25px;
+        padding-left: 100px;
+    }
+    select{
+        height: 50px;
+        width: 20%;
+        font-size: 18px;
+    }
+</style>
+<body>
+    <!-- Q-1 -->
+    <center>
+        <h1>----GRADE----</h1>
+    <h2>Enter your score : </h2>
+    <input type="text" id="in">
+
+    <h1 style="color: rgb(233, 59, 117);" id="ans"></h1>
+
+    <br>
+    <hr>
+    <!-- Q-2 -->
+    <h1>------------Restaurant Bill------------</h1>
+
+        <select id="form" class="form-select" aria-label="Default select example">
+            <option id="opt1" selected>Open this select menu</option>
+            <option id="m1" value="1">pizza</option>
+            <option id="m2" value="2">cold-drinks</option>
+            <option id="m3" value="3">burger</option>
+        </select>
+
+        <h1 style="color: rgb(233, 59, 117);" id="ans2"></h1>
+        <br>
+    <hr>
+        <!-- Q-3 -->
+        <h1>----SIMPLE INTEREST----</h1>
+<br>
+    <h1>Enter principle amount</h1>
+    <input type="text" id="i1">
+
+    <h1>Enter Rate</h1>
+    <input type="text" id="i2">
+
+    <h1>Enter Time duration</h1>
+    <input type="text" id="i3">
+
+    <h1 style="color: rgb(233, 59, 117);" id="ans3"></h1>
+        <br>
+        <hr>
+                <!-- Q-4 -->
+                <h1>----PASSWORD----</h1>
+                <br>
+                <h2>Enter Password</h2>
+                <input type="text" id="in4">
+                <h1 style="color: rgb(233, 59, 117);" id="err"></h1>
+</center>
+</body>
+</html>
+<script>
+    let score = document.getElementById("in").value
+    if(score === ""){
+        document.getElementById("ans").innerHTML = "Enter valid score"
+    }
+    else{
+        if(score >= 90 && score <= 100){
+            document.getElementById("ans").innerHTML = "A+"
+        }
+        else if(score >= 80 && score <= 89){
+            document.getElementById("ans").innerHTML = "A"
+        }
+        else if(score >= 70 && score <= 79){
+            document.getElementById("ans").innerHTML = "B+"
+        }
+        else if(score >= 60 && score <= 69){
+            document.getElementById("ans").innerHTML = "B"
+        }
+        else if(score >= 50 && score <= 59){
+            document.getElementById("ans").innerHTML = "C"
+        }
+        else if(score >= 40 && score <= 49){
+            document.getElementById("ans").innerHTML = "D"
+        }
+        else{
+            document.getElementById("ans").innerHTML = "FAIL"
+        }
+    }
+    //Q-2
+    let form = document.getElementById("form").value
+    let m1 = document.getElementById("m1").value
+    let m2 = document.getElementById("m2").value
+    let m3 = document.getElementById("m3").value
+
+    price1 = 200
+    price2 = 100
+    price3 = 300
+    if (form === "") {
+        document.getElementById("ans2").innerText="Select Menu"    
+    }
+    else{
+        if (form == m1) {
+            document.getElementById("ans2").innerText="Your Bill Is..."+(price1+((5/100)*price1)) +" ₹"
+        }
+        else if (form == m2) {
+            document.getElementById("ans2").innerText="Your Bill Is..."+(price2+((5/100)*price2)) +" ₹"
+        }
+        else{
+            document.getElementById("ans2").innerText="Your Bill Is..."+(price3+((5/100)*price3)) +" ₹"
+        }
+    }
+
+
+
+    //Q-3
+
+
+    let p = document.getElementById("i1").value
+    let r = document.getElementById("i2").value
+    let t = document.getElementById("i3").value
+
+    let total = +p * +r * +t
+
+    document.getElementById("ans3").innerHTML = total 
+
+    //Q-4
+    let storedpass = "manu01"
+     let enteredpass = document.getElementById("in4").value
+
+     if(enteredpass === "") {
+        document.getElementById("err").innerHTML = "Enter valid Password"
+     }
+     else{
+        if(storedpass === enteredpass) {
+
+        document.getElementById("err").innerHTML = "Logged in"
+        }
+        else{
+        document.getElementById("err").innerHTML = "Incorrect password"
+        }
+      }
+</script>
