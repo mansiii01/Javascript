@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR 1</title>
+</head>
+<body>
+    <center>
+        <h1>----------WEEK----------</h1>
+
+        <h3 style="font-size: 25px;">Enter Any Day : </h3>
+         <input type="text" id="in">
+        <h2 id="ans"></h2>
+    </center>
+</body>
+</html>
+<script>
+
+    let day = document.getElementById("in").value
+
+    if (day === "") {
+        document.getElementById("in").innerText="Invalid Value"
+    }
+    else{
+        switch (day) {
+            case "sunday":
+                document.getElementById("ans").innerText=" IT'S A WEEKEND!"
+                break
+
+            case "monday":
+                document.getElementById("ans").innerText=" IT'S A FIRST DAY OF WEEK..."
+                break
+
+            case "tuesday":
+                document.getElementById("ans").innerText="IT'S THIRD DAY OF WEEK..."
+                break
+
+            case "wednesday":
+                document.getElementById("ans").innerText=" IT'S MIDDLE DAY OF WEEK..."
+                break
+
+            case "thursday":
+                document.getElementById("ans").innerText=" IT'S A FIFTH DAY OF WEEK..."
+                break  
+
+            case "friday":
+                document.getElementById("ans").innerText=" IT'S ALMOST WEEKEND..."
+                break 
+
+            case "saturday":
+                document.getElementById("ans").innerText=" IT'S A HALF HOLLYDAY..."
+                break
+
+            default: document.getElementById("ans").innerText="IT'S SOMEOTHER DAY"
+        }
+    }
+</script>

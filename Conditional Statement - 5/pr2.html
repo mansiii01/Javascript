@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR 2</title>
+</head>
+<body>
+    <center>
+        <h1>---------CALCULATOR----------</h1>
+
+        <h3>Enter Operator : </h3>
+         <input type="text" id="in1">
+        <h3>Enter First number : </h3>
+         <input type="text" id="in2">
+        <h3>Enter Second number : </h3>
+         <input type="text" id="in3">
+        <h2 id="ans1"></h2>
+
+    </center>
+</body>
+</html>
+<script>
+    let ope = document.getElementById("in1").value
+    let num1 = document.getElementById("in2").value
+    let num2 = document.getElementById("in3").value
+
+    if (ope === "" && num1 === "" && num2 === "") {
+        document.getElementById("ans1").innerText="Invalid Number"
+    }
+    else{
+        switch (ope) {
+            case "+":
+                document.getElementById("ans1").innerText= "ADDITION : " + (+num1 + +num2)
+                break
+            case "-":
+                document.getElementById("ans1").innerText= "SUBTRACTION : " + (+num1 - +num2)
+                break        
+            case "*":
+                document.getElementById("ans1").innerText= "MULTIPLICATION : " + (+num1 * +num2)
+                break        
+            case "/":
+                document.getElementById("ans1").innerText= "DIVISION : " + (+num1 / +num2)
+                break
+
+            default : document.getElementById("ans1").innerText = "INVALID OPERATOR"     
+            }
+    }
+
+</script>

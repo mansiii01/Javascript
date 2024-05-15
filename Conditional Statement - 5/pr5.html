@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    select{
+       height: 40px;
+       width: 140px;
+       padding-left: 10px;
+       padding-right: 10px;
+       /* padding: 5px; */
+    }
+</style>
+<body>
+    <center>
+
+        <h1>-------------COFFEE MENU-------------</h1>
+
+        <select name="" id="c">
+            <option value="Cappuccino">Cappuccino</option>
+            <option value="Java Chip Frapuccino">Java Chip Frapuccino</option>
+            <option value="Caffe Americano">Caffe Americano</option>
+        </select>
+       <h2 id="ans"></h2>
+    </center>
+</body>
+</html>
+<script>
+
+    let c = document.getElementById("c").value
+
+    if (c === "") {
+        document.getElementById("ans").innerText = ""
+    }
+    else{
+        switch(c)
+        {
+            case "Cappuccino" : document.getElementById("ans").innerText = "CAPPUCCIONN : 100 ₹"
+            break
+            case "Java Chip Frapuccino" : document.getElementById("ans").innerText = "Java Chip Frapuccino : 200 ₹"
+            break
+            case "Caffe Americano" : document.getElementById("ans").innerText = "Caffe Americano : 300 ₹"
+            break
+        }
+    }
+</script>
