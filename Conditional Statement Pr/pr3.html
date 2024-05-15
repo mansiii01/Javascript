@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>-----Guess number-----</h1>
+
+        <h2>Enter any number</h2>
+        <input type="text"  id="number">
+
+        <h3 id="secret"></h3>
+    </center>
+</body>
+</html>
+<script>
+    let number = document.getElementById("number").value
+    let rightnum = "4"
+
+    if(number === ""){
+        document.getElementById("secret").innerHTML = "Enter any number"
+    }
+    else{
+        if(number < 3){
+            document.getElementById("secret").innerHTML = "Oopps..you are so far to the number"
+        } else if(number == 3 || number == 5){
+            document.getElementById("secret").innerHTML = "You are just close to secret number...try again"
+        } else if(number > 5){
+            document.getElementById("secret").innerHTML = "Oopps..you are so far to the number"
+        } else{
+            document.getElementById("secret").innerHTML = "Congrats Dear...! You got it... <br> You won the price"
+        }
+    }
+
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>-----Convert dollar into Rupees-----</h1>
+
+    <h2>Enter price in dollar</h2>
+    <input type="text" id="dollar">
+
+    <h3 id="price"></h3>
+</center>
+</body>
+</html>
+
+<script>
+    let dollar = document.getElementById("dollar").value
+    let rupees = 83.51
+
+    if(dollar === ""){
+        document.getElementById("price").innerHTML = "Enter valid dollars.."
+    } else{
+        document.getElementById("price").innerHTML = "Your rupees is : " + (dollar*rupees).toFixed(2)
+    }
+</script>
