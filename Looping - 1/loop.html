@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 130px;
+        font-size: 23px;
+        padding-left: 80px;
+    }
+</style>
+<body>
+    <center>
+    <!-- Q-1 -->
+    <h1>-----PALINDROME-----</h1>
+    <h2>Enter any name : </h2>
+    <input type="text" id="in1">
+    <h2 style="color: rgb(218, 5, 225);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" id="ans1"></h2>
+
+</center>
+</body>
+</html>
+<script>
+    //Q-1
+    let str = document.getElementById("in1").value
+    let p1 = ""
+    let p2 = ""
+    if(str === ""){
+        document.getElementById("ans1").innerHTML = "INVALID"
+    }
+    else{
+        for(let i = 0; str[i]; i++){
+            p1 += str[i]
+        }
+        for(let i=str.length-1; i>=0; i--){
+            p2 += str[i]
+        }
+        if(p1 === p2){
+            document.getElementById("ans1").innerHTML = "PALINDROME"
+        }
+        else{
+            document.getElementById("ans1").innerHTML = "NOT A PALINDROME"
+        }
+    }
+   
+</script>

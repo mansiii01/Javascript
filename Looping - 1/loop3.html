@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 130px;
+        font-size: 23px;
+        padding-left: 80px;
+    }
+</style>
+<body>
+    <center>
+     <!-- Q-3 -->
+     <h1>-----EVEN-----</h1>
+     <h2>Enter any number : </h2>
+     <input type="text" id="in3">
+     <h2 style="color: rgb(218, 5, 225);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" id="ans3"></h2>
+     <h2 id="ans3-3"></h2>
+    </center>
+</body>
+</html>
+<script>
+    
+    //Q-3
+    number = document.getElementById("in3").value
+    for(let i = 1; i <= number; i++){
+        if(i%2===0){
+            document.getElementById("ans3").innerHTML = "This number of even..."
+            document.getElementById("ans3-3").innerHTML += i +"&nbsp &nbsp"
+        }
+    }
+
+</script>

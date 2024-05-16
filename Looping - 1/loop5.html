@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 130px;
+        font-size: 23px;
+        padding-left: 80px;
+    }
+</style>
+<body>
+    <center>
+        <!-- Q-5 -->
+        <h1>-----CONSONANTS-----</h1>
+        <h2>Enter any string : </h2>
+        <input type="text" id="in5">
+        <h2 style="color: rgb(218, 5, 225);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" id="ans5"></h2>
+       </center>
+</body>
+</html>
+<script>
+    //Q-5
+    name = document.getElementById("in5").value
+    var result = 0
+    for(let i = 1; i <= name.length; i++){
+        if(name[i] === 'a' || name[i] === 'A' || name[i] === 'e' || name[i] === 'E' || name[i] === 'i' || name[i] === 'I' || name[i] === 'o' || name[i] === 'O' || name[i] === 'u' || name[i] === 'U'){
+            
+        }
+        else{
+            result += 1
+        }
+    }
+    document.getElementById("ans5").innerHTML = result
+</script>

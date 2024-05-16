@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 130px;
+        font-size: 23px;
+        padding-left: 80px;
+    }
+</style>
+<body>
+
+     <center>
+    <!-- Q-4 -->
+    <h1>-----ODD-----</h1>
+    <h2>Enter any number : </h2>
+    <input type="text" id="in4">
+    <h2 style="color: rgb(218, 5, 225);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" id="ans4"></h2>
+    <h2 id="ans4-4"></h2>
+</center>  
+</body>
+</html>
+<script>
+     //Q-4
+     number1 = document.getElementById("in4").value
+    for(let i = 1; i <= number1; i++){
+        if(i%2!==0){
+            document.getElementById("ans4").innerHTML = "This number of odd..."
+            document.getElementById("ans4-4").innerHTML += i +"&nbsp &nbsp"
+        }
+    }
+</script>
