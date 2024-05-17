@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        padding-left: 60px;
+    }
+</style>
+<body>
+    <center>
+        <h1>------EVEN------</h1>
+        <h3>Enter first Number :- </h3>
+        <input type="text" id="in1">
+
+        <h3>Enter second Number :- </h3>
+        <input type="text" id="in2">
+        <h2 id="even"></h2>
+        <h2 id="ans"></h2>
+    </center>
+</body>
+</html>
+<script>
+    let num1 = document.getElementById("in1").value
+    let num2 = document.getElementById("in2").value
+    let count1 = 0
+    let i = 1
+
+    if(num1 === "" && num2 === ""){
+        document.getElementById("ans").innerHTML="INVALID"
+    }
+    else{
+        do{
+        if(i %2==0){
+            count1++
+            document.getElementById("even").innerHTML += i + "&nbsp;&nbsp;&nbsp;"
+        }
+        i++
+        }while(i <= num2)
+
+        document.getElementById("ans").innerHTML= "TOTAL EVEN NUMBER = " +count1    
+    }
+</script>

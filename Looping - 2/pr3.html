@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        padding-left: 60px;
+    }
+</style>
+<body>
+    <center>
+        <h1>------REVERSE------</h1>
+        <h2>Enter any number : </h2>
+        <input type="text" id="in">
+        <h2 id="ans"></h2>
+       </center>
+</body>
+</html>
+<script>
+    let num = document.getElementById("in").value
+    
+    if(num === ""){
+        document.getElementById("ans").innerHTML = "INVALID"
+    }
+    else{
+        let rev = 0 , rem
+        while(num != 0){
+            rem = num % 10
+            rev = rev * 10 + rem
+            num = Math.floor(num/10)
+        } 
+        document.getElementById("ans").innerHTML = rev
+
+    }
+    
+</script>

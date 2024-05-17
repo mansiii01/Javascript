@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        padding-left: 60px;
+    }
+</style>
+<body>
+   <center>
+    <h1>------COUNT NUMBER------</h1>
+    <h2>Enter any number : </h2>
+    <input type="text" id="in">
+    <h2 id="ans"></h2>
+   </center>
+</body>
+</html>
+<script>
+    let num1 = document.getElementById("in").value
+    let i = 0; count = 0
+    if(num1 === ""){
+        document.getElementById("ans").innerHTML = "INVALID"
+    }
+    else{
+        do{
+            count++
+            i++
+        }while(num1[i])
+        document.getElementById("ans").innerHTML = count
+    }
+</script>
