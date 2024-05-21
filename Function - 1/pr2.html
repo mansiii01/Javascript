@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 35px;
+        padding-left: 50px;
+        width: 80px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <center>
+    <h1>------SUM------</h1>
+    <h2>Enter first number : </h2>
+    <input type="text" id="in1">
+    <h2>Enter second number : </h2>
+    <input type="text" id="in2">
+    <h2>Enter third number : </h2>
+    <input type="text" id="in3">
+
+    <h2 style="color: palevioletred;font-size: 35px;" id="ans"></h2>
+</center>
+</body>
+</html>
+<script>
+
+    function sum(){
+        let a = document.getElementById("in1").value
+        let b = document.getElementById("in2").value
+        let c = document.getElementById("in3").value
+        let d = +a + +b + +c
+        document.getElementById("ans").innerHTML = d
+    }
+    sum()
+
+     
+
+</script>

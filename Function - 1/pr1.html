@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 35px;
+        padding-left: 50px;
+        width: 80px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <center>
+        <h1>------PRODUCT------</h1>
+        <h2>Enter Product of digits : </h2>
+        <input type="text" id="in1">
+
+        <h2 style="color: palevioletred;font-size: 35px;" id="ans"></h2>
+
+    </center>
+</body>
+</html>
+<script>
+    let p = document.getElementById("in1").value
+    let digit = 1
+    const calculateProduct = function(){
+        for(let i = 0; p[i]; i++){
+            digit *= p[i]
+        }
+        document.getElementById("ans").innerHTML = "Ans : "+ digit
+    }
+    calculateProduct()
+</script>

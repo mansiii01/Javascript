@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 35px;
+        padding-left: 50px;
+        width: 80px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <center>
+        <h1>------FACTORIAL------</h1>
+        <h2>Enter Any number : </h2>
+        <input type="text" id="in1">
+
+        <h2 style="color: palevioletred;font-size: 35px;" id="ans"></h2>
+
+    </center>
+</body>
+</html>
+<script>
+    let fact = document.getElementById("in1").value
+    let f = 1
+
+    factorial=()=>{
+        if(fact === ""){
+            document.getElementById("ans").innerHTML = "INVALID"
+        }
+        else{
+            for(let i=1; i<=fact; i++){
+                f *= i
+            }
+            document.getElementById("ans").innerHTML = f
+        }
+    }
+    factorial()
+</script>
