@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIZZBUZZ</title>
+</head>
+<body>
+    <center>
+        <h1>------------- FizzBuzz -------------</h1>
+    </center>
+    <h3>
+        Enter Your Starting Point : 
+        <input type="number" id="int1">
+    </h3>
+    <h3>
+        Enter Your Ending Point : 
+        <input type="number" id="int2">
+    </h3>
+    <h2 id="ans1"></h2>
+</body>
+</html>
+<script>
+    let start = document.getElementById("int1").value 
+    let end = document.getElementById("int2").value
+
+    if(start === "" && end === "")
+    {
+        document.getElementById("ans1").innerHTML = "Invalid Number"
+    }
+    else
+    {
+        for(let i=start; i<=end; i++)
+        {
+            if(i%3 === 0 && i%5 === 0)
+            {
+                document.getElementById("ans1").innerHTML += i+" FizzBuzz"
+            }
+            else if(i%3 === 0)
+            {
+                document.getElementById("ans1").innerHTML += i+" Fizz"
+            }
+            else if(i%5 === 0)
+            {
+                document.getElementById("ans1").innerHTML += i+" Buzz"
+            }
+            else
+            {
+                document.getElementById("ans1").innerHTML += i
+            }
+            document.getElementById("ans1").innerHTML += "<br>"
+        }
+    }
+
+</script>
