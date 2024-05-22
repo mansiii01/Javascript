@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>------CELSIUS TO FAHRENHEIT------</h1>
+        <h2>Enter Tempreture [in celsius (%c)] : </h2>
+        <input type="text" id="in1">
+        
+
+        <h2 style="color: rgb(255, 112, 3);" id="ans"></h2>
+    </center>
+    
+</body>
+</html>
+<script>
+    let c = document.getElementById("in1").value
+    fahrenheit =(c)=>{
+        if(c === ""){
+            document.getElementById("ans").innerHTML = "INVALID"
+        }
+        else{
+            return(c*9/5) + 32
+        }
+    }
+    document.getElementById("ans").innerHTML = "CELSIUS TO FAHRENHEIT :- "+fahrenheit(c) + "DEGREE..." 
+</script>

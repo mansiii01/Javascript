@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 80px;
+        padding-left: 50px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <center>
+        <h1>------AREA OF SQUARE------</h1>
+        <h2>Enter Any number : </h2>
+        <input type="text" id="in1">
+        
+
+        <h2 style="color: rgb(255, 112, 3);" id="ans"></h2>
+    </center>
+</body>
+</html>
+<script>
+        let a = document.getElementById("in1").value
+
+        square=(a)=>{
+            area = +a * +a
+            return area
+        }
+        document.getElementById("ans").innerHTML = "The area of square is : " + square(a)
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 80px;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <center>
+        <h1>------CONCATENATES TWO STRING------</h1>
+        <h2>Enter first string : </h2>
+        <input type="text" id="in1">
+        <h2>Enter second string : </h2>
+        <input type="text" id="in2">
+
+        <h2 style="color: rgb(255, 112, 3);" id="ans"></h2>
+    </center>
+</body>
+</html>
+<script>
+            let s1 = document.getElementById("in1").value
+            let s2 = document.getElementById("in2").value
+
+     con=(s1 , s2)=>{
+
+            let con = s1 + s2
+            return con
+
+        }
+            document.getElementById("ans").innerHTML = "The concatenates two strings of is : " + con(s1 +"&nbsp" , s2)
+</script>
