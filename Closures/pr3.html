@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h3>Enter First Factor :- </h3>
+        <input type="text" id="in5">
+
+        <h3>Enter Second Factor :- </h3>
+        <input type="text" id="in6">
+
+        <h2 id="ans3"></h2>
+    </center>
+</body>
+</html> 
+<script>
+    let fact1 = document.getElementById("in5").value
+    let fact2 = document.getElementById("in6").value
+
+    function factor_1(fact1){
+        function factor_2(fact2){
+            let product =  fact1 * fact2
+            document.getElementById("ans3").innerHTML="product of " +fact1+ " and " +fact2+ " is : " +product+ " <br> Factor Of &nbsp; " +product+ " is : "
+
+            for(let i=1; i<=product; i++)
+                {
+                    if(product%i == 0)
+                        {
+                            document.getElementById("ans3").innerHTML += i +" &nbsp;&nbsp;&nbsp;&nbsp;"
+                        }
+                }
+        }
+        factor_2(fact2)
+    }
+    factor_1(fact1)
+</script>    

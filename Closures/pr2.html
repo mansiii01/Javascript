@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1></h1>
+        <h2>Enter any name : </h2>
+        <input type="text" id="in1">
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    let a = document.getElementById("in1").value
+
+    function msj_1(a){
+            document.getElementById("ans").innerHTML = "Hello ! " + a +"&nbsp" + "<br>"
+        function msj_2(){
+            document.getElementById("ans").innerHTML += "How are you..👋"
+        }
+        msj_2()
+    }
+    msj_1(a)
+</script>
