@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <center>
+        <h1>------------- Convert km to miles -------------</h1>
+        <h2>Enter value in kilometers : </h2>
+        <input type="text" id="in1">
+
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+    km_to_m = document.getElementById("in1").value
+    function km(){
+        let conv_fac = 0.621371
+
+        let miles = km_to_m * conv_fac
+
+        document.getElementById("ans").innerHTML = miles
+    }
+    km()
+</script>

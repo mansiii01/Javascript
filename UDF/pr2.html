@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUM</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <Center>
+        <h1>------------- Simple Interest -------------</h1>
+    <h2>
+        Enter Principle :     </h2>
+
+        <input type="text" id="int1">
+    <h2>
+        Enter Rate :     </h2>
+
+        <input type="text" id="int2">
+    <h2>
+        Enter Time duration :     </h2>
+
+        <input type="text" id="int3">
+    <h2 id="ans1"></h2>
+</Center>
+
+</body>
+</html>
+
+<script>
+    let num1 = document.getElementById("int1").value
+    let num2 = document.getElementById("int2").value
+    let num3 = document.getElementById("int3").value
+
+    function si_num1(num1) 
+    {
+        function si_num2(num2) 
+        {
+            function si_num3(num3) 
+            {
+                document.getElementById("ans1").innerText = "Simple Interest Of "+num1+" , "+num2+" and "+num3+" is : "+ (+num1 * +num2 * +num3)/100
+            }
+            si_num3(num3) 
+        }
+        si_num2(num2) 
+    }
+    si_num1(num1) 
+   
+</script>

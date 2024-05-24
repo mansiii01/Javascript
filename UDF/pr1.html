@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <center>
+        <h1>------------------ vowel ------------------</h1>
+    <h2>
+        Enter Any string :     </h2>
+
+        <input type="text" id="int">
+    <h2 id="ans"></h2>
+</center>
+
+</body>
+</html>
+<script>
+    let str = document.getElementById("int").value
+    let count = 0
+
+    function CharCount(){
+        for(let i=0; i <= str.length; i++){
+            if( str[i] === 'a' || str[i] === 'A' ||
+                str[i] === 'e' || str[i] === 'E' ||
+                str[i] === 'i' || str[i] === 'I' ||
+                str[i] === 'o' || str[i] === 'O' ||
+                str[i] === 'u' || str[i] === 'U'
+            ){
+                 count++
+            }
+            document.getElementById("ans").innerHTML = "Vowel in String is : " + count
+        }
+    }
+    CharCount(str)
+    
+</script>
