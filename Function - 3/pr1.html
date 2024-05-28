@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>---------------- Factorial Of Number ----------------</h1>
+    </center>
+    <h1>* Using Function Expression *</h1>
+
+    <h3>
+        Enter Any Number : 
+        <input type="number" id="int1">
+    </h3>
+    <h2 id="ans1"></h2>
+    <br><hr><br>
+
+
+    <h1>* Using Arrow Function *</h1>
+
+    <h3>
+        Enter Any Number : 
+        <input type="number" id="int2">
+    </h3>
+    <h2 id="ans2"></h2>
+    <br><hr><br>
+
+
+
+    <h1>* Using IIFE Function *</h1>
+
+    <h3>
+        Enter Any Number : 
+        <input type="number" id="int3">
+    </h3>
+    <h2 id="ans3"></h2>
+    <br><hr><br>
+
+
+
+    <h1>* Using Function Declaration Or Function Statement *</h1>
+
+    <h3>
+        Enter Any Number : 
+        <input type="number" id="int4">
+    </h3>
+    <h2 id="ans4"></h2>
+    <br><br><br>
+
+
+
+</body>
+</html>
+
+<script>
+    //Using Function Expression
+
+    let fun1 = document.getElementById("int1").value
+
+    if(fun1 === "")
+    {
+        document.getElementById("ans1").innerHTML = "Invalid Number"
+    }
+    else
+    {
+        let fun_1 = function factorial(fun1)
+        {
+            if(fun1 <= 1)
+            {
+                return 1
+            }
+            else
+            {
+                return fun1 * factorial(fun1 - 1)
+            }
+        }
+        document.getElementById("ans1").innerHTML = "Factorial Of &nbsp;"+fun1+" is : "+fun_1(fun1)
+    }
+
+
+
+    //Using Arrow Function
+
+    let fun2 = document.getElementById("int2").value
+
+    if(fun2 === "")
+    {
+        document.getElementById("ans2").innerHTML = "Invalid Number"
+    }
+    else
+    {
+        fun_2 = (fun2) =>
+        {
+            if(fun2 <= 1)
+            {
+                return 1
+            }
+            else
+            {
+                return fun2 * fun_2(fun2 - 1)
+            }
+        }
+        document.getElementById("ans2").innerHTML = "Factorial Of &nbsp;"+fun2+" is : "+fun_2(fun2)
+    }
+
+
+
+    //Using IIFE Function
+
+    let fun3 = document.getElementById("int3").value
+
+    if(fun3 === "")
+    {
+        document.getElementById("ans3").innerHTML = "Invalid Number"
+    }
+    else
+    {
+        document.getElementById("ans3").innerHTML = "Factorial Of &nbsp;"+fun3+" is : "+
+        (function fun_3(fun3)
+        {
+            if(fun3 <= 1)
+            {
+                return 1
+            }
+            else
+            {
+                return fun3 * fun_3(fun3 - 1)
+            }
+        })(fun3)
+    }
+
+
+
+    //Using Function Declaration Or Function Statement
+
+    let fun4 = document.getElementById("int4").value
+
+    if(fun4 === "")
+    {
+        document.getElementById("ans4").innerHTML = "Invalid Number"
+    }
+    else
+    {
+        function fun_4(fun4)
+        {
+            if(fun4 <= 1)
+            {
+                return 1
+            }
+            else
+            {
+                return fun4 * fun_4(fun4 - 1)
+            }
+        }
+        document.getElementById("ans4").innerHTML = "Factorial Of &nbsp;"+fun4+" is : "+fun_4(fun4)
+    }
+
+</script>
