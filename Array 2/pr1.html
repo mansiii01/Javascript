@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>----- Double All Number Using map() -----</h1>
+    </center>
+    <h3>
+        Enter Any Size :
+        <input type="number" id="int1">
+    </h3>
+    <h2 id="ans1"></h2>
+
+    <br><hr><br>
+</body>
+</html>
+<script>
+    let size_1 = document.getElementById("int1").value 
+    let arr_1 = []
+    for(let i=1; i<=size_1; i++)
+    {
+       let num_1 = prompt("Enter Number :");
+       document.getElementById("ans1").innerHTML += i+"Number is : "+num_1+"<br>"
+       arr_1.push(num_1)
+    }
+    document.getElementById("ans1").innerHTML += "<br>Double of All Elements is :"
+
+    let fun_1 = arr_1.map((element_1) =>
+    {
+        return element_1 * 2
+    } )
+    document.getElementById("ans1").innerHTML += fun_1
+</script>

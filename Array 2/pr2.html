@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>-----Filter [age]-----</h1>
+    <h3 id="ans2"></h3>
+</body>
+</html>
+<script>g
+    let num2 = [10,20,15,5,19]
+
+    let ans2 = num2.filter((age)=>
+    {
+       return age>18
+    })
+    console.log(ans2)
+    document.getElementById("ans2").innerHTML += "AGE GREATER THAN 18 :-" + ans2
+</script>

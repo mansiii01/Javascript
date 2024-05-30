@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>-----Some [temperature]-----</h1>
+    <h3 id="ans6"></h3>
+</body>
+</html>
+<script>
+    let temp = [120,85,80,60]
+
+    function check(el){
+        return el>100
+    }
+    console.log(temp.some(check));
+    document.getElementById("ans6").innerHTML = temp + "<br>"
+    document.getElementById("ans6").innerHTML += "TEMPERATURE IS ABOVE 100 DG :- " + temp.some(check)
+</script>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>-----Includes [Green]-----</h1>
+    <h3 id="ans4"></h3>
+</body>
+</html>
+<script>
+    let ans4 = ['red','green','blue']
+
+    console.log(ans4.includes('green'))
+    document.getElementById("ans4").innerHTML = ans4 + "<br>"
+    document.getElementById("ans4").innerHTML += " 'green':- " + ans4.includes('green')
+</script>

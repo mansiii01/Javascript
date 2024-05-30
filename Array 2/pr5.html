@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>-----Every [Exam Score]-----</h1>
+    <h3 id="ans5"></h3>
+</body>
+</html>
+<script>
+    let value = [80,70,300,90]
+
+    function check(el){
+        return el>=60
+    }
+    console.log(value.every(check));
+    document.getElementById("ans5").innerHTML = value + "<br>"
+    document.getElementById("ans5").innerHTML += "ALL SCORE IS >60 OR NOT :- " + value.every(check)
+</script>

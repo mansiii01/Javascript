@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>-----Map [Add+1]-----</h1>
+    <h3 id="ans7"></h3>
+</body>
+</html>
+<script>
+    let add = [1,2,3,4]
+    let ans7 = add.map((el)=>{
+        return el+1
+    })
+    console.log(ans7)
+    document.getElementById("ans7").innerHTML = add + "<br>"
+    document.getElementById("ans7").innerHTML += "AFTER ADD +1 :- " + ans7
+</script>

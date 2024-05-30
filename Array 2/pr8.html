@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>-----Filter [even]-----</h1>
+    <h3 id="ans8"></h3>
+</body>
+</html>
+<script>
+    let even = [1,2,3,4]
+    let ans8 = even.filter((el)=>{
+        return el % 2 == 0
+    })
+    console.log("ans8")
+    document.getElementById("ans8").innerHTML = even + "<br>"
+    document.getElementById("ans8").innerHTML += "EVEN :- " + ans8 
+</script>
