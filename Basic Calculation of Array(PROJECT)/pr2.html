@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sum of array</h1>
+    <h2 id="ans2"></h2>
+</body>
+</html>
+<script>
+    let arr_2 =  [1, 2, 3, 4]
+    let res_filter = []
+    document.getElementById("ans2").innerHTML += "All The Elements in Array are : "+arr_2+ "<br><br>"
+
+    let ans_2 = arr_2.filter((elements_2) =>
+    {
+        if(elements_2 % 2 != 0)
+        {
+            // return elements_2
+            return res_filter.push(elements_2)
+        }
+    })
+    let ans_3 = res_filter.reduce((acc, cur) =>
+    {
+        return acc + cur
+    },0)
+    document.getElementById("ans2").innerHTML += "Addition Of Odd Number is : "+ans_3
+</script>
