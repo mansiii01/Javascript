@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>-------forEach and multiply-------</h1>
+    <h2>Enter Any size : </h2>
+    <input type="text" id="in1">
+
+    <h1 id="ans"></h1>
+</center>
+</body>
+</html>
+<script>
+    let size = document.getElementById("in1").value
+    let arr = []
+    for(let i=1; i<=size; i++){
+        let num = prompt("Enter Number : ");
+        document.getElementById("ans").innerHTML += "Number is : "+num+"<br>"
+        arr.push(num)
+    }
+    document.getElementById("ans").innerHTML += "<br>"
+
+    arr.forEach((el)=>{
+        document.getElementById("ans").innerHTML += el+ "is multiply by 3 is : "+el*3+"<br>"
+    })
+</script>

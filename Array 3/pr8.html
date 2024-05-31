@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>-------Task 8-------</h1>
+        
+    
+        <h1 id="ans"></h1>
+    </center>
+</body>
+</html>
+<script>
+   let arr = ["apple" , "mango" , "kiwi" , "orange" , "peer"]
+   
+    document.getElementById("ans").innerHTML = arr+"<br><br>"+"STRING LENGTH LESS THAN 5 :  "
+
+
+    function processArray(){
+        let result = arr.filter((el)=>{
+            return el.length<5
+        })
+        return result.toString().toLocaleUpperCase()
+    }
+    console.log(processArray(arr))
+
+    document.getElementById("ans").innerHTML += "<br>"+ processArray(arr)
+</script>
