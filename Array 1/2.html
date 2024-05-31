@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>----------------- Remove Number Using Loop and pop() -----------------</h1>
+    </center>
+    <h2 id="ans2"></h2>
+    <br><hr><br>
+</body>
+</html>
+<script>
+    
+    let arr_2 = [1,2,3,4,5]
+
+document.getElementById("ans2").innerHTML = "All Element Of an Arrary is : "+arr_2+"<br>"
+for(let i = arr_2.length - 1; i >= 0 ; i--)
+{
+    arr_2.pop(i)
+}
+console.log(arr_2)
+document.getElementById("ans2").innerHTML += "All Element Remove From an Arrary"+arr_2
+
+</script>
