@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>----------------- Add 3 Elements Using unshift() -----------------</h1>
+    </center>
+    <h2 id="ans13"></h2>
+    <br><hr><br>
+
+</body>
+</html>
+<script>
+
+ let arr_13 = ["Rose","Marigold","Jasmine"]
+
+document.getElementById("ans13").innerHTML = "All Flower Of an Arrary is : "+arr_13
+arr_13.unshift("Lily")
+arr_13.unshift("Tulip")
+arr_13.unshift("Sunflower")
+console.log(arr_13)
+document.getElementById("ans13").innerHTML += "<br>After Adding Lily, Tulip and Sunflower is : "+arr_13
+
+</script>

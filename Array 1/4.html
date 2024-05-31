@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>----------------- Add Animal Using unshift() -----------------</h1>
+    </center>
+    <h2 id="ans4"></h2>
+    <br><hr><br>
+
+</body>
+</html>
+<script>
+    
+    let arr_4 = ["Lion","Tiger","Elephant"]
+
+document.getElementById("ans4").innerHTML = "All Animal Of an Arrary is : "+arr_4
+arr_4.unshift("Giraffe")
+arr_4.unshift("Zebra")
+console.log(arr_4)
+document.getElementById("ans4").innerHTML += "<br>After Adding Giraffe and Zebra is : "+arr_4
+
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>----------------- Remove 2 Index Element and Add 3 Element Using splice() -----------------</h1>
+    </center>
+    <h2 id="ans15"></h2>
+    <br><br><br>
+
+</body>
+</html>
+<script>
+
+let arr_15 = ["Vivo","OnePlus","iPhone","Samsung","Oppo"]
+document.getElementById("ans15").innerHTML = "All Phone Name Of an Arrary is : "+arr_15+"<br>"
+arr_15.splice(2,1,"MI","Realme","BlackBerray")
+
+console.log(arr_15)
+document.getElementById("ans15").innerHTML += "After Remove 2 Index Element and Add 3 Element From an Arrary is : "+arr_15
+
+</script>
