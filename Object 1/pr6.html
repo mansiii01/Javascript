@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>-----pr 6-----</h1>
+    </center>
+    <h2 id="ans"></h2>
+</body>
+</html>
+<script>
+    let student = {
+        StudentName : "Mansi Zariya",
+        StudentAge : 18,
+        StudentCource : "Fullstack Development",
+    }
+
+    for(key6 in student){
+        document.getElementById("ans").innerHTML += (key6 + " = " + student[key6] + "<br>")
+        console.log(key6 + " = " + student[key6])
+    }
+
+    student.greet = function(){
+        console.log("Have A Nice Day !!!")
+        document.getElementById("ans").innerHTML += "Have A Nice Day !!!"
+    }
+    student.greet()
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>-----pr 1-----</h1>
+</center>
+    <h2 id="ans"></h2>
+</body>
+</html>
+<script>
+    let person = {
+        name : "Mansi", 
+        age : 18,
+        course : "BCA"
+    }
+    for(key in person){
+        console.log(key + " = " + person[key])
+        document.getElementById("ans").innerHTML += key + " = " + person[key] + "<br>"
+    }
+</script>

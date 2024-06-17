@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>-----pr 3-----</h1>
+    </center>
+    <h2 id="ans"></h2>
+</body>
+</html>
+<script>
+    let book = {
+        BookTitle : "Gandhi on Non-Violence", 
+        Author :  "Mahatma Gandhi",
+        Editor : "Thomas Merton",
+        Length :  "300 pages"   
+    }
+    // book.Length = "200 pages"
+    for(key in book){
+        console.log(key + " = " + book[key])
+        document.getElementById("ans").innerHTML += key + " = " + book[key] + "<br>"
+    }
+
+    let oldBookPage = book.Length;
+    book.Length = "200 pages"
+
+    document.getElementById("ans").innerHTML += "<br> After changing Page property..<br> " + book.Length 
+    console.log("New Bookpage",book.Length)
+</script>

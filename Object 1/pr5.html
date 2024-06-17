@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>-----pr 5-----</h1>
+    </center>
+    <h3 id="ans1"></h3>
+    <h3 id="ans2"></h3>
+</body>
+</html>
+<script>
+    let laptop = {
+      LaptopName : "HP Laptop",
+      LaptopMemory : "4GB",
+      ProcessorName : "Intel(R)"
+    }
+
+    document.getElementById("ans1").innerHTML += "Before Edit Price :- <br><br>"
+
+    for(key5 in laptop){
+        document.getElementById("ans1").innerHTML += (key5 + " = " + laptop[key5] + "<br>")
+        console.log(key5 + " = " + laptop[key5])
+    }
+
+    laptop.LaptopPrice = "₹ 1200"
+
+    document.getElementById("ans2").innerHTML += "After Edit Price :- <br><br>"
+
+    for(key5 in laptop){
+        document.getElementById("ans2").innerHTML += (key5 + " = " + laptop[key5] + "<br>")
+        console.log(key5 + " = " + laptop[key5])
+    }
+</script>
