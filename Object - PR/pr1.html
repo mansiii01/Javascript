@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>-------TASK 1-------</h2>
+    </center>
+    <h1 id="ans"></h1>
+</body>
+</html>
+<script>
+    let student = [
+        {name : "mansi", score : 45},
+        {name : "bhakti", score : 35},
+        {name : "komal", score : 95},
+        {name : "aashtha", score : 15},
+        {name : "harmi", score : 20},
+        {name : "hetvi", score : 92},
+    ]
+
+    let ans = student.filter((el)=>{
+        return el.score > 90
+    }).map((el)=>{
+        return el.name 
+    })
+    console.log(ans)
+    document.getElementById("ans").innerHTML += ans 
+
+</script>

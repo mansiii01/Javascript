@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>-------TASK 2-------</h2>
+    </center>
+</body>
+</html>
+<script>
+    let Quote = [
+       {Text : "chainshow man", Author : 'Tsugu', Category : "education"},
+       {Text : "jujutsu kaisen", Author : 'Gege Akutami', Category : "anime"},
+       {Text : "shinchan", Author : 'Yoshito Usui', Category : "cartoon"},
+       {Text : "death_note", Author : 'Tsugumi Ohba', Category : "education"}
+   ]
+
+   let quote = Quote.filter((el)=>
+   {
+       return el.Category === "education"
+   })
+   console.log(quote)
+//    document.getElementById("quote").innerHTML += quote
+
+</script>

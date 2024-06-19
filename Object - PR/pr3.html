@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>------- TASK 3 -------</h1>
+    </center>
+    <h3 id="ans"></h3>
+</body>
+
+</html>
+<script>
+    let book = [
+    { title: "chainshow man", author: "Tsugu", category: "education",price:30,  quantityAvailable : true },
+        { title: "jujutsu kaisen", author: "Gege Akutami", category: "anime",price:80, quantityAvailable : false},
+        { title: "shinchan", author: "Yoshito Usui", category: "cartoon",price:50, quantityAvailable : true },
+        { title: "death_note", author: "Tsugumi Ohba", category: "education",price:20, quantityAvailable : false }
+
+
+    ]
+
+    let ans = book.filter((el)=>{
+        return el.price < 60 && el.quantityAvailable == true
+    })
+    console.log(ans)
+
+
+</script>
