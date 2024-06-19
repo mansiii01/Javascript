@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let Student = [
+        {name : "mansi", roll : 1, marks : 45},
+        {name : "bhakti", roll : 15, marks : 75},
+        {name : "komal", roll : 21, marks : 25},
+        {name : "aashtha", roll : 8, marks : 15},
+        {name : "harmi", roll : 18, marks : 65}
+    ]
+
+    for(let i=0; i < Student.length; i++){
+        console.log(Student[i].name.toUpperCase())
+    }
+
+    //Task 2
+
+    let ans = Student.filter((el)=>{
+        return el.marks > 60
+    })
+    console.log(ans)
+   
+
+    //Task 3
+    let ans3 = Student.filter((el)=>{
+        return el.marks > 60 && el.roll > 15
+    })
+    console.log(ans3)
+
+    //Task 4
+    let sum = Student.reduce((acc , curr)=>{
+         return acc + curr.marks
+    },0)
+    console.log(sum)
+
+
+    //Task 5
+    let ans5 = Student.filter((el)=>{
+        return el.marks > 60
+
+    }).map((el)=>{
+        return el.name
+    })
+    console.log(ans5)
+
+
+    //Task 6
+    let add = Student.map((el)=>{
+        return el.marks + 20
+    })
+    console.log(add)
+
+    //Task 7
+    let Categorize = [
+        { text: "chainshow man", author: "Tsugu", category: "education" },
+        { text: "jujutsu kaisen", author: "Gege Akutami", category: "anime" },
+        { text: "shinchan", author: "Yoshito Usui", category: "cartoon" },
+        { text: "death_note", author: "Tsugumi Ohba", category: "education" }
+    ]
+
+    let ans6 = Categorize.filter((el)=>{
+        return el.category === "education"
+    })
+    console.log(ans6)
+   
+
+
+</script>
