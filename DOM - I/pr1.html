@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        height: 40px;
+        width: 120px;
+    }
+</style>
+<body>
+    <h1 class="green blue red">RED & WHITE MULTIMEDIA EDUCATION</h1>
+    <button onclick="chgColor()">Change Color</button>
+   <br>
+
+    <hr>
+    <!-- Task 2 -->
+    <h3 class="green blue red">HELLO GREEN</h3>
+    <button onclick="chgColorGreen()">Change Color</button>
+
+    <hr>
+    <!-- Task 2 -->
+    <h5 class="green blue red">HELLO BLUE</h5>
+    <button onclick="chgColorBlue()">Change Color</button>
+
+    
+    <hr>
+    <br>
+    <button onclick="forg()">All Green</button><br><br>
+    <button onclick="forb()">All Blue</button><br><br>
+    <button onclick="forr()">All Red</button>
+    
+    <hr>
+    <br>
+</body>
+</html>
+<script>
+    //TASK 1
+    function chgColor(){
+        document.querySelector("h1").style.color = "red"
+    }
+
+    //TASK 2
+    function chgColorGreen(){
+        document.querySelector("h3").style.color = "green"
+    }
+
+    //TASK 3
+    function chgColorBlue(){
+        document.querySelector("h5").style.color = "blue"
+    }
+
+    //TASK 4
+    function forg() {
+        let green = document.querySelectorAll(".green")
+        for(let i = 0 ; i<green.length; i++){
+            green[i].style.color="green"
+        }
+    }
+
+    //TASK 5
+    function forb() {
+        let blue = document.querySelectorAll(".blue")
+        for(let i = 0 ; i<blue.length; i++){
+            blue[i].style.color="blue"
+        }
+    }
+
+    //TASK 6
+    function forr() {
+        let red = document.querySelectorAll(".red")
+        for(let i = 0 ; i<red.length; i++){
+            red[i].style.color="red"
+        }
+    }
+    
+</script>
