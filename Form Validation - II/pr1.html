@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: 400% 400%;
+}
+
+.container {
+  width: 100%;
+  max-width: 30rem;
+  background-color: #fff;
+}
+
+form {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 3rem 2.5rem;
+}
+
+.input-box input {
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 2rem;
+  padding: 0 0 0 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+
+}
+.btn {
+  width: 105%;
+  padding: 0.8rem 0;
+  color: #fff;
+  background-color: #445e93;
+  border-radius: 5px;
+  cursor: pointer;
+   font-size: 20px;
+  border: 1px solid transparent;
+  font-family: "Poppins", sans-serif;
+}
+#err{
+    margin-top: -28px;
+    position: absolute;
+    color: red;
+}
+#pw1{
+    margin-top: -28px;
+    position: absolute;
+    color: red;
+}
+#cpw1{
+    margin-top: -28px;
+    position: absolute;
+    color: red;
+}
+#email1{
+    margin-top: -28px;
+    position: absolute;
+    color: red;
+}
+
+</style>
+<body>
+
+    
+  
+    <div class="container">
+      <form action="" id="signup">
+  
+          <div class="input-box">
+            <label>Id</label>
+            <input type="text" id="id" placeholder="Enter your ID :">
+            <span id="err"></span>
+        </div>
+  <br>
+          <div class="input-box">
+              <label>Password</label>
+            <input type="text" id="pw" placeholder="Your password">
+            <span id="pw1"></span>
+          </div>
+    <br>
+          <div class="input-box">
+            <label>Confirm Password</label>
+          <input type="text" id="cpw" placeholder="Your Confirm password">
+          <span id="cpw1"></span>
+        </div>
+    <br>
+   
+
+        <div class="input-box">
+            <label>Email</label>
+          <input type="text" id="email" placeholder="Enter your Email">
+          <span id="email1"></span>
+        </div>
+        <br>
+
+          <button type="submit" class="btn">Continue</button>
+          <!-- <input type="submit"> -->
+
+        </form>
+    </div>
+  
+  </body>
+</html>
+<script>
+  document.getElementById("signup").onsubmit = function(event)
+{
+    event.preventDefault()
+    let id = document.getElementById("id").value
+    let Password = document.getElementById("pw").value
+    let ConfirmPassword = document.getElementById("cpw").value
+    let email = document.getElementById("email").value
+
+    document.getElementById("err").innerHTML = ""
+    document.getElementById("pw1").innerHTML = ""
+    document.getElementById("cpw1").innerHTML = ""
+    document.getElementById("email").innerHTML = ""
+
+    try{
+        if(id === "" || /\d/.test(id))
+        {
+            throw new Error("Please Enter your ID")
+        }
+       
+    }
+    catch(err)
+    {
+        document.getElementById("err").innerHTML = err.message
+    }
+
+
+    try
+    {
+        if(Password === "")
+        {
+            throw new Error("Enter Password")
+        }
+        if(!/^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{6,})\S$/.test(Password))
+        {
+           throw new Error("Enter valid password")
+        }
+        if(Password.length < 8)
+        {
+            throw new Error("Minimum 8 Characters")
+        }
+    }
+    catch(err)
+    {
+        document.getElementById("pw1").innerHTML = err.message
+    }
+
+
+    try
+    {
+        if(Password !== ConfirmPassword)
+        {
+            throw new Error("Password Will Not Match...")
+        }
+    }
+    catch(err)
+    {
+        document.getElementById("cpw1").innerHTML = err.message
+    }
+
+    try{
+        if(email === "")
+        {
+            throw new Error("Enter Email ID")
+        }
+        if(!/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+        {
+            throw new Error("Please Enter your valid Email ID")
+        }
+       
+    }
+    catch(err)
+    {
+        document.getElementById("email1").innerHTML = err.message
+    }
+}
+
+</script>
