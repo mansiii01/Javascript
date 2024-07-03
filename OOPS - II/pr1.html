@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class car {
+        constructor(name,modal,year){
+            this.name = name;
+            this.modal = modal;
+            this.year = year;
+        }
+    }
+
+    let obj = new car ("toyota","fortuner",2025)
+    console.log(obj)
+
+    class area{
+        constructor(length,width){
+            this.length = length;
+            this.width = width;
+            this.total = length*width 
+        }
+    }
+    let obj1 = new area(10,20)
+    console.log(obj1);
+    
+    class Rectangle {
+        constructor(length,width){
+            this.length = length;
+            this.width = width;
+            this.perimeter = (2*length)+(2*width)
+        }
+    }
+    let obj2 = new Rectangle(20,8)
+    console.log(obj2);
+
+    class person {
+        constructor(name,age,score){
+            this.name = name;
+            this.age = age;
+            this.score = score;
+        }
+    }
+    let obj3 = new person ("sanju",21,"99%");
+    console.log(obj3);
+
+    class user {
+        constructor(username,password){
+            this.username = username;
+            this.password = password;
+        }
+    }
+    let obj4 = new user ("sanju","1234");
+    console.log(obj4);
+
+</script>
