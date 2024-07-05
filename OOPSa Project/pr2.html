@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>--------------- Automobile [ElectricVehicle] ---------------</h1>
+    <h3>
+        Enter Vehicle Name :
+    </h3>
+    <input type="text" id="name_veh">
+
+    <h3>
+        Enter Price Name :
+    </h3>
+    <input type="number" id="price_veh">
+
+    <h3>
+        Enter Color Name :
+    </h3>
+    <input type="text" id="color_veh">
+
+    <h2 id="vehicle_answer"></h2>
+</center>
+
+</body>
+</html>
+<script>
+    let name_veh = document.getElementById("name_veh").value
+let price_veh = document.getElementById("price_veh").value
+let color_veh = document.getElementById("color_veh").value
+
+if(name_veh === "" || price_veh === "" || color_veh === "")
+{
+    document.getElementById("vehicle_answer").innerHTML += "Invalid Animal Name, Price And Color..."
+}
+else
+{
+    class Automobile
+    {
+        constructor(name_veh, price_veh, color_veh)
+        {
+            this.name_veh = name_veh
+            this.price_veh = price_veh
+            this.color_veh = color_veh
+        }
+    }
+    class Electricvehicle extends Automobile
+    {
+        name()
+        {
+            document.getElementById("vehicle_answer").innerHTML += "Vehicle Name is : " + this.name_veh 
+            console.log("Vehicle Name is : " + this.name_veh)
+        }
+        price()
+        {
+            document.getElementById("vehicle_answer").innerHTML += "<br>Vehicle Price is : " + this.price_veh 
+            console.log("Vehicle Price is : " + this.price_veh)
+        }
+        color()
+        {
+            document.getElementById("vehicle_answer").innerHTML += "<br>Vehicle Color is : " + this.color_veh
+            console.log("Vehicle Color is : " + this.color_veh)
+        }
+    }
+
+    let vehicle_obj = new Electricvehicle(name_veh, price_veh, color_veh)
+    vehicle_obj.name()
+    vehicle_obj.price()
+    vehicle_obj.color()
+}
+</script>

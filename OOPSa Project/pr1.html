@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- map -->
+    <center>
+        <h1>------Using Map------</h1>
+
+        <h2>Enter Array of Size : </h2>
+        <input type="text" id="arr_map">
+
+        <h2 id="ans1"></h2>
+    </center>
+<br><br>
+    <!-- filter -->
+    <center>
+        <h1>------Using filter------</h1>
+
+        <h2>Enter Array of Size : </h2>
+        <input type="text" id="arr_filter">
+
+        <h2 id="ans2"></h2>
+    </center>
+</body>
+</html>
+<script>
+    let size1 = document.getElementById("arr_map").value
+    let arr1 = []
+
+    if(size1 === ""){
+        document.getElementById("ans1").innerHTML += "Invalid Array Size.."
+    }
+    else{
+        for(let i = 1; i <= size1; i++){
+            let num1 = prompt("Enter Number : ")
+            document.getElementById("ans1").innerHTML += i + "  Number is : "+num1+"<br>"
+            arr1.push(num1)
+        }
+        Array.prototype.fun_map = function(el){
+            let maparr = []
+            for(let i = 0; i <= this.length; i++){
+                if(el(this[i])){
+                    maparr.push(this[i])
+                }
+            }
+            return maparr
+        }
+        let ans1 = arr1.fun_map((el)=>{
+            return el % 2 != 0
+        })
+        console.log(ans1)
+        document.getElementById("ans1").innerHTML += "<br> Odd number is : "+ans1
+    }
+
+
+    //filter
+
+    let size2 = document.getElementById("arr_filter").value
+    let arr2 = []
+
+    if(size2 === ""){
+        document.getElementById("ans2").innerHTML += "Invalid Array Size.."
+    }
+    else{
+        for(let i = 1; i <= size2; i++){
+            let num2 = prompt("Enter Number : ")
+            document.getElementById("ans2").innerHTML += i + "  Number is : "+num2+"<br>"
+            arr2.push(num2)
+        }
+        Array.prototype.fun_filter = function(el){
+            let filterarr = []
+            for(let i = 0; i <= this.length; i++){
+                if(el(this[i])){
+                    filterarr.push(this[i])
+                }
+            }
+            return filterarr
+        }
+        let ans2 = arr2.fun_filter((el)=>{
+            return el % 2 == 0
+        })
+        console.log(ans2)
+        document.getElementById("ans2").innerHTML += "<br> Even number is : "+ans2
+    }
+</script>
