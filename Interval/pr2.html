@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        height: 300px;
+        margin-top: 50px;
+        display: none;
+    }
+</style>
+<body>
+    <center>
+        <h1></h1>
+    <img src="https://memesbams.com/wp-content/uploads/2017/11/3-Best-Happy-Birthday-Gifs.gif" alt="">
+</center>
+
+</body>
+</html>
+<script>
+    let index = 6
+    let stop = setInterval(()=>{
+        index--
+        document.querySelector("h1").innerHTML = index
+        if(index === 0){
+            clearInterval(stop)
+            document.querySelector("img").style.display = "block"
+            document.querySelector("h1").style.display = "none"
+        }
+    },1000)
+</script>

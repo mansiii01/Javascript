@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .box{
+        height: 200px;
+        width: 90%;
+        border: 1px solid;
+        display: flex;
+        background-color: rgba(33, 33, 77, 0.929);
+    }
+    .box1{
+        width: 25%;
+        border: 1px solid;
+    }
+    .box1 i{
+        font-size: 40px;
+        margin-top: 20px;
+        color: white;
+    }
+    span{
+        color: gray;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    h1{
+        color: whitesmoke;
+    }
+</style>
+<body>
+    
+    <center>
+        <br><br><br><br><br>
+        <div class="box">
+            <div class="box1">
+                <i class="fa-regular fa-user"></i>
+                <h1 id="count1"></h1>
+                <span>Students Trained</span>
+            </div>
+            <div class="box1">
+                <i class="fa-solid fa-braille"></i>
+                <h1 id="count2"></h1>
+                <span>Branches</span>
+            </div>
+            <div class="box1">
+                <i class="fa-solid fa-certificate"></i>                
+                <h1 id="count3"></h1>
+                <span>Certification</span>
+            </div>
+            <div class="box1">
+                <i class="fa-regular fa-user"></i>
+                <h1 id="count4"></h1>
+                <span>Approved Course</span>
+            </div>
+            <div class="box1">
+                <i class="fa-regular fa-user"></i>
+                <h1 id="count5"></h1>
+                <span>Companies Tie-Ups</span>
+            </div>
+        </div>
+    </center>
+</body>
+</html>
+<script>
+    let index1 = 0 
+    let stop1 = setInterval(()=>{
+        index1++
+        document.querySelector("#count1").innerHTML = index1+"+"
+        if(index1 === 37500){
+            clearInterval(stop1)
+        }
+    },10)
+
+    let index2 = 0
+    let stop2 = setInterval(()=>{
+        index2++
+        document.querySelector("#count2").innerHTML = index2+"+"
+        if(index2 === 22){
+            clearInterval(stop2)
+        }
+    },100)
+
+
+    let index3 = 0
+    let stop3 = setInterval(()=>{
+        index3++
+        document.querySelector("#count3").innerHTML = index3+"+"
+        if(index3 === 8){
+            clearInterval(stop3)
+        }
+    },100)
+
+    let index4 = 0
+    let stop4 = setInterval(()=>{
+        index4++
+        document.querySelector("#count4").innerHTML = index4+"+"
+        if(index4 === 50){
+            clearInterval(stop4)
+        }
+    },100)
+
+    let index5 = 0
+    let stop5 = setInterval(()=>{
+        index5++
+        document.querySelector("#count5").innerHTML = index5+"+"
+        if(index5 === 1500){
+            clearInterval(stop5)
+        }
+    },1)
+</script>
