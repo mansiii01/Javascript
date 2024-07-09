@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        height: 630px;
+        width: 90%;
+    }
+</style>
+<body>
+    <center>
+        <br><br>
+    <img src="https://wallpaperaccess.com/full/238032.jpg" alt="">
+    <img src="https://wallpaperaccess.com/full/2156147.jpg" alt="">
+    <img src="https://wallpaperaccess.com/full/3781822.jpg" alt="">
+    <img src="https://wallpaperaccess.com/full/2250290.jpg" alt="">
+    <img src="https://wallpaperaccess.com/full/3781826.jpg" alt="">
+    <img src="https://wallpaperaccess.com/full/24083.jpg" alt="">
+</center>
+</body>
+</html>
+<script>
+let pic = document.querySelectorAll("img")
+let index = 0
+
+function slides(index)
+{
+    for(let i=0; i<pic.length; i++)
+    {
+        pic[i].style.display = "none"
+    }
+    pic[index].style.display = "block"
+}
+function show()
+{
+    setInterval(()=>
+    {
+        slides(index)
+        index++
+        if(index === pic.length)
+        {
+            index = 0
+        }
+    },1500)
+}
+show()
+</script>
