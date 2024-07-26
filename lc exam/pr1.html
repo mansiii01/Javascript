@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .product {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 300px;
+        text-align: center;
+    }
+
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+    input{
+        height: 30px;
+        padding-left: 10px;
+    }
+    button{
+        height: 40px;
+        width: 120px;
+        font-size: 18px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <center>
+    <div id="main"></div>
+</center>
+</body>
+
+</html>
+
+<script>
+    fetch('https://fakestoreapi.com/products')
+        .then((res) => res.json())
+        .then((json) => {
+            console.log(json);
+            fakestoreapi(json);
+            localStorage.setItem("keys", JSON.stringify(json))
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+    function fakestoreapi(json) {
+        json.forEach((el, index) => {
+            let div = document.createElement('div');
+            let heading = document.createElement('h3');
+            heading.innerHTML = el.title;
+
+            let img = document.createElement('img');
+            img.setAttribute("src", el.image);
+
+            let price = document.createElement('p');
+            price.innerHTML = "$" + el.price;
+            price.className = 'price';
+
+            let inputt = document.createElement("input");
+            inputt.value = el.price;
+            inputt.placeholder = "Enter your price" 
+            inputt.className = "inputt";
+
+            let edit = document.createElement('button');
+            edit.innerText =  "edit";
+            edit.style.display = "block";
+
+            
+
+            let update = document.createElement('button');
+            update.innerText = "update";
+
+            div.className = 'product';
+
+            div.append(heading, img, price, inputt, edit, update);
+            document.getElementById("main").append(div);
+            inputt.value = "";
+
+            edit.addEventListener("click", function () {
+                inputt.value = el.price;
+            });
+
+            update.addEventListener("click", function () {
+                let newPrice = inputt.value;
+                price.innerHTML = "$" + newPrice;
+                json[index].price = newPrice;
+                localStorage.setItem("keys", JSON.stringify(json));
+            });
+        });
+    }
+</script>
