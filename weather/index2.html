@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5em;
+  overflow: hidden;
+}
+.wrapper {
+  position: relative;
+  background-image: linear-gradient(skyBlue 70%, dodgerBlue);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid; */
+}
+.sun {
+  position: absolute;
+  background-color: #f2ef88;
+  height: 70vw;
+  width: 70vw;
+  box-shadow: 0 0 90px #f2ef88;
+  border-radius: 50%;
+  bottom: -160%;
+  left: 15%;
+  opacity: 0;
+  z-index: 2;
+  transition: all 1s ease;
+}
+.highNoonSun {
+  bottom: 30%;
+  opacity: 1;
+}
+.container {
+  position: relative;
+  width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+  border-radius: 5px;
+  z-index: 10;
+}
+.weather_search {
+  position: relative;
+  width: 90%;
+  margin: 10px auto;
+}
+.search_input {
+  background: whitesmoke;
+  width: 100%;
+  padding: 15px 60px 15px 15px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+}
+.search_btn {
+  position: fixed;
+  top: 10.8%;
+  right: 1%;
+  width: 40px;
+  height: 40px;
+  margin-right: 600px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.5s;
+}
+.main{
+    border: 1px solid;
+    margin-top: 30px;
+}
+
+
+
+
+
+</style>
+<body>
+    <div class="wrapper">
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>  
+        <div class="sun highNoonSun"></div>
+        <div class="container">
+            <div class="weather_search">
+                <input id="city_name"
+                  type="text"
+                  class="search_input"
+                  autocomplete="off"
+                  placeholder="Search your location..."
+                />
+                <button class="search_btn"  id="submit"><i class="fas fa-search"></i></button>
+              
+                <div id="main"></div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("submit").addEventListener("click", function() 
+{
+    let city_name = document.getElementById("city_name").value
+    let url = `http://api.weatherapi.com/v1/current.json?key=7d34b134c50d4c71a6792014243107&q=${city_name}`
+    
+
+    fetch(url)
+    .then(res => res.json())
+    .then(json => 
+    {
+        console.clear()
+        console.log(json)
+        displayData(json)
+    })
+    .catch(error => 
+    {
+        console.log('Error Fetching The Weather Data:', error)
+    })
+})
+
+function displayData(json) 
+{
+    let div = document.createElement("div")
+    document.getElementById("main").innerHTML = ""
+
+    let city = document.createElement("p")
+    city.innerHTML = `<b>City : </b> ${json.location.name}`
+
+    let state = document.createElement("p");
+    state.innerHTML = `<b>Region : </b> ${json.location.region}`
+
+    let country = document.createElement("p")
+    country.innerHTML = `<b>Country : </b> ${json.location.country}`
+
+    let temp_c = document.createElement("p")
+    temp_c.innerHTML = `<b>Temperature (C) : </b> ${json.current.temp_c}°C`
+
+    let temp_f = document.createElement("p")
+    temp_f.innerHTML = `<b>Temperature (F) : </b> ${json.current.temp_f}°F`
+
+    let text = document.createElement("p")
+    text.innerHTML = `<b>Text : </b> ${json.current.condition.text}`
+
+    let icon = document.createElement("img")
+    // icon.setAttribute("src", json.current.condition.icon)
+    icon.src = `${json.current.condition.icon}`
+
+    div.append(city, state, country, temp_c, temp_f, text, icon)
+    document.getElementById("main").append(div)
+}
+</script>
