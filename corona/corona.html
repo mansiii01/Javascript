@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corona</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  line-height: 1.5em;
+  overflow: hidden;
+}
+.corona {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid; */
+  background: url('https://cdn.vox-cdn.com/thumbor/-hNj5QZJ-cMTx1QLW0h6ZhmClEc=/0x0:2040x1360/1400x1050/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/19786008/acastro_200311_3936_coronavirus_0001.0.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.weather_search {
+  position: relative;
+  width: 90%;
+  margin: 200px 200PX;
+}
+.search_input {
+  background: whitesmoke;
+  width: 20%;
+  padding: 15px 60px 15px 15px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+}
+.search_btn {
+  position: fixed;
+  top: 29%;
+  right: 1%;
+  width: 40px;
+  height: 40px;
+  margin-right: 1050px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.5s;
+}
+
+
+
+</style>
+<body>
+    <div class="corona">
+    <div class="container">
+        <div class="weather_search">
+            <input id="city_name"
+              type="text"
+              class="search_input"
+              autocomplete="off"
+              placeholder="Search your location..."
+            />
+            <button class="search_btn"  id="submit"><i class="fas fa-search"></i></button>
+          <br>
+            <div id="main"></div>
+          </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    document.getElementById("submit").addEventListener("click", function() 
+    {
+        let city_name = document.getElementById("city_name").value.toUpperCase()
+        fetch(`https://data.covid19india.org/v4/min/data.min.json`)
+        .then(res => res.json())
+        .then(json => 
+        {
+            console.clear()
+            console.log(json)
+            displayData(json, city_name)
+        })
+        .catch(error => 
+        {
+            console.log('Error Fetching The Covid Data:', error)
+        })
+})
+
+function displayData(json, city_name)
+{
+    let div = document.createElement("div")
+    document.getElementById("main").innerHTML = ""
+    div.style.marginTop = "30px"
+    div.style.marginLeft = "30px"
+
+    let tested = document.createElement("h3")
+    tested.innerHTML = `<b>Tested : </b> ${json[city_name].delta7.tested}`
+    tested.style.color = "rgb(7, 156, 236)"
+    tested.style.marginTop = "10px"
+
+    let confirmed = document.createElement("h3")
+    confirmed.innerHTML = `<b>Confirmed : </b> ${json[city_name].delta7.confirmed}`
+    confirmed.style.color = "rgb(7, 156, 236)"
+    confirmed.style.marginTop = "10px"
+
+    let vaccinated1 = document.createElement("h3")
+    vaccinated1.innerHTML = `<b>vaccination1 : </b> ${json[city_name].delta7.vaccinated1}`
+    vaccinated1.style.color = "rgb(7, 156, 236)"
+    vaccinated1.style.marginTop = "10px"
+
+    let recovered = document.createElement("h3")
+    recovered.innerHTML = `<b>Recovered : </b> ${json[city_name].delta7.recovered}`
+    recovered.style.color = "rgb(7, 156, 236)"
+    recovered.style.marginTop = "10px"
+
+
+    div.append(tested , confirmed , vaccinated1 , recovered)
+    document.getElementById("main").append(div)
+}
+</script>
