@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 100%;
+        background: url('https://img.freepik.com/premium-photo/photo-floral-background-with-white-flowers-left_916912-125.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    .form{
+        border: 2px solid transparent;
+        width: 80%;
+        height: 650px;
+}
+#title{
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    padding-left: 20px;
+}
+#description{
+    height: 80px;
+    margin-top: 20px;
+    width: 30%;
+    font-size: 15px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+#due_date{
+    height: 35px;
+    width: 150px;
+    font-size: 15px;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+#priority{
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 10px
+}
+#salary{
+    height: 35px;
+    width: 200px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 10px  
+}
+button{
+    height: 40px;
+    width: 160px;
+    margin-top: 15px;
+    background-color: rgb(65, 185, 240);
+    border: 1px solid transparent;
+    font-size: 17px;
+    color: white;
+}
+
+
+form input, form textarea, form select, form button {
+    display: block;
+}
+
+#task-list {
+    margin-top: 20px;
+}
+
+.task {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.task .title {
+    font-weight: bold;
+}
+
+</style>
+<body>
+    <center>
+        <div class="container">
+                <div class="form">
+        <h1>Task Management System</h1>
+        <form action="" id="task-form">
+            <input type="text" name="" id="title" placeholder="Enter your task name" required><br>
+            <textarea id="description" placeholder="Description" required></textarea><br>
+            <label for="">DUE DATE</label>
+            <input type="date" id="due_date" required><br>
+            <select id="priority" required>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select><br>
+            <label for="">SELECT YOUR EXPECTED SALARY</label>
+           
+            <input type="text" name="" id="salary"  required><br>
+            <button type="submit">Add Task</button>
+
+        </form>
+    </div>
+    <div id="task-list">
+        <!-- Tasks will be displayed here -->
+    </div>
+</div>
+
+</center>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const taskForm = document.getElementById('task-form');
+        const taskList = document.getElementById('task-list');
+
+        taskForm.addEventListener('submit', addTask);
+
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        let editId = null;
+
+        function addTask(e) {
+            e.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const dueDate = document.getElementById('due_date').value;
+            const priority = document.getElementById('priority').value;
+            const salary = document.getElementById('salary').value;
+
+            if (editId) {
+                tasks = tasks.map(task => task.id === editId ? { ...task, title, description, dueDate, priority, salary } : task);
+                editId = null;
+            } else {
+                const task = { id: Date.now(), title, description, dueDate, priority, salary };
+                tasks.push(task);
+            }
+            
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            displayTasks();
+            taskForm.reset();
+        }
+
+        function displayTasks() {
+            taskList.innerHTML = '';
+
+            tasks.forEach(task => {
+                const taskDiv = document.createElement('div');
+                taskDiv.classList.add('task');
+
+                const taskTitle = document.createElement('h2');
+                taskTitle.classList.add('title');
+                taskTitle.textContent = task.title;
+
+                const taskDescription = document.createElement('p');
+                taskDescription.textContent = task.description;
+
+                const taskDueDate = document.createElement('h3');
+                taskDueDate.textContent = `Due: ${task.dueDate}`;
+
+                const taskPriority = document.createElement('h4');
+                taskPriority.textContent = `Priority: ${task.priority}`;
+
+                const taskSalary = document.createElement('h4');
+                taskSalary.textContent = `Expected Salary: ${task.salary}`;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => deleteTask(task.id));
+
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.addEventListener('click', () => editTask(task.id));
+                editButton.style.marginLeft = "20px"
+
+                taskDiv.appendChild(taskTitle);
+                taskDiv.appendChild(taskDescription);
+                taskDiv.appendChild(taskDueDate);
+                taskDiv.appendChild(taskPriority);
+                taskDiv.appendChild(taskSalary);
+                taskDiv.appendChild(deleteButton);
+                taskDiv.appendChild(editButton);
+
+                taskList.appendChild(taskDiv);
+            });
+        }
+
+        function deleteTask(id) {
+            tasks = tasks.filter(task => task.id !== id);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            displayTasks();
+        }
+
+        function editTask(id) {
+            const task = tasks.find(task => task.id === id);
+            document.getElementById('title').value = task.title;
+            document.getElementById('description').value = task.description;
+            document.getElementById('due_date').value = task.dueDate;
+            document.getElementById('priority').value = task.priority;
+            document.getElementById('salary').value = task.salary;
+
+            editId = id;
+        }
+
+        displayTasks();
+    });
+</script>
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+            const taskForm = document.getElementById('task-form');
+            const taskList = document.getElementById('task-list');
+        
+            taskForm.addEventListener('submit', addTask);
+        
+            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        
+            function addTask(e) {
+                e.preventDefault();
+        
+                const title = document.getElementById('title').value;
+                const description = document.getElementById('description').value;
+                const dueDate = document.getElementById('due_date').value;
+                const priority = document.getElementById('priority').value;
+                const salary = document.getElementById('salary').value;
+        
+                const task = { id: Date.now(), title, description, dueDate, priority, salary };
+                tasks.push(task);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                displayTasks();
+                taskForm.reset();
+            }
+        
+            function displayTasks() {
+                taskList.innerHTML = '';
+        
+                tasks.forEach(task => {
+                    const taskDiv = document.createElement('div');
+                    taskDiv.classList.add('task');
+        
+                    const taskTitle = document.createElement('h2');
+                    taskTitle.classList.add('title');
+                    taskTitle.textContent = task.title;
+        
+                    const taskDescription = document.createElement('p');
+                    taskDescription.textContent = task.description;
+        
+                    const taskDueDate = document.createElement('h3');
+                    taskDueDate.textContent = `Due: ${task.dueDate}`;
+        
+                    const taskPriority = document.createElement('h4');
+                    taskPriority.textContent = `Priority: ${task.priority}`;
+        
+                    const taskSalary = document.createElement('h4');
+                    taskSalary.textContent = `Expected Salary: ${task.salary}`;
+        
+                    const deleteButton = document.createElement('button');
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.addEventListener('click', () => deleteTask(task.id));
+        
+                    taskDiv.appendChild(taskTitle);
+                    taskDiv.appendChild(taskDescription);
+                    taskDiv.appendChild(taskDueDate);
+                    taskDiv.appendChild(taskPriority);
+                    taskDiv.appendChild(taskSalary);
+                    taskDiv.appendChild(deleteButton);
+        
+                    taskList.appendChild(taskDiv);
+                });
+            }
+        
+            function deleteTask(id) {
+                tasks = tasks.filter(task => task.id !== id);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                displayTasks();
+            }
+        
+            displayTasks();
+        });
+
+</script> -->
